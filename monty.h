@@ -75,5 +75,4 @@ void addnode(stack_t **head, int n);
 void addqueue(stack_t **head, int n);
 void f_queue(stack_t **head, unsigned int counter);
 void f_stack(stack_t **head, unsigned int counter);
-extern bus_t bus = {NULL, NULL, NULL, 0};
 #endif
