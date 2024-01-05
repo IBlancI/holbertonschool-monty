@@ -1,7 +1,5 @@
 #include "monty.h"
 
-/* Initialisation de la structure bus_t à NULL et 0 */
-bus_t bus = {NULL, NULL, NULL, 0};
 
 /**
  * main - interprèteur de code Monty
@@ -24,6 +22,8 @@ int main(int argc, char *argv[])
 
 	/* Initialisation du compteur de lignes à 0 */
 	unsigned int counter = 0;
+
+	bus_t bus = {NULL, NULL, NULL, 0};
 
 	/* Vérifie s'il y a exactement 2 arguments passés au programme */
 	if (argc != 2)
