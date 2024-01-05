@@ -11,16 +11,16 @@
  */
 void free_stack(stack_t *head)
 {
-    stack_t *aux;
+	stack_t *aux;
 
-    aux = head;
+	aux = head;
 
-    /* Traverse the stack and free each node */
-    while (head)
-    {
-        aux = head->next; /* Save the next node before freeing the current one */
-        free(head); /* Free the current node */
-        head = aux; /* Move to the next node */
-    }
+	/* Traverse the stack and free each node */
+	while (head)
+	{
+		aux = head->next; /* Save the next node before freeing the current one */
+		free(head); /* Free the current node */
+		head = aux; /* Move to the next node */
+	}
 }
 

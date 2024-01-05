@@ -8,22 +8,25 @@
  */
 void f_add(stack_t **head, unsigned int counter)
 {
-	stack_t *h; // Déclaration d'un pointeur temporaire
-	int len = 0, aux; // Initialisation des variables
+	/* Déclaration d'un pointeur temporaire */
+	stack_t *h;
+	/* Initialisation des variables */
+	int len = 0, aux;
 
-	h = *head; // Initialise h avec l'adresse du sommet de la pile
+	/* Initialise h avec l'adresse du sommet de la pile */
+	h = *head;
 
-	// Calcule la taille de la pile en parcourant tous les éléments
+	/* Calcule la taille de la pile en parcourant tous les éléments */
 	while (h)
 	{
 		h = h->next;
 		len++;
 	}
 
-	// Vérifie si la pile contient au moins deux éléments
+	/* Vérifie si la pile contient au moins deux éléments */
 	if (len < 2)
 	{
-		// Si la pile est trop courte, affiche un message d'erreur et quitte le programme
+		/* quitte et affiche un message quand la pile est trop courte */
 		fprintf(stderr, "L%d: can't add, stack too short\n", counter);
 		fclose(bus.file);
 		free(bus.content);
@@ -31,10 +34,14 @@ void f_add(stack_t **head, unsigned int counter)
 		exit(EXIT_FAILURE);
 	}
 
-	h = *head; // Réinitialise h avec l'adresse du sommet de la pile
-	aux = h->n + h->next->n; // Additionne les valeurs des deux premiers éléments
-	h->next->n = aux; // Stocke le résultat dans le deuxième élément de la pile
-	*head = h->next; // Met à jour le pointeur de la pile vers le deuxième élément
-	free(h); // Libère la mémoire du premier élément supprimé
+	/* Réinitialise h avec l'adresse du sommet de la pile */
+	h = *head;
+	/* Additionne les valeurs des deux premiers éléments */
+	aux = h->n + h->next->n;
+	/* Stocke le résultat dans le deuxième élément de la pile */
+	h->next->n = aux;
+	/* Met à jour le pointeur de la pile vers le deuxième élément */
+	*head = h->next;
+	/* Libère la mémoire du premier élément supprimé */
+	free(h);
 }
-
