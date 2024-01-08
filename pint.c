@@ -15,10 +15,18 @@ void f_pint(stack_t **head, unsigned int counter)
 	/* Check if the stack is empty */
 	if (*head == NULL)
 	{
+		/* Print error message with line number */
 		fprintf(stderr, "L%u: can't pint, stack empty\n", counter);
+
+		/* Close the file associated with Monty */
 		fclose(bus.file);
+
+		/* Free dynamically allocated memory for Monty content */
 		free(bus.content);
+
+		/* Free the memory allocated for the stack */
 		free_stack(*head); /* Free the memory allocated for the stack */
+
 		exit(EXIT_FAILURE); /* Exit the program with a failure status */
 	}
 
